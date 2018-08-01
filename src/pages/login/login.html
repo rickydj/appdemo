@@ -6,19 +6,19 @@
 -->
 <ion-content padding>
   <ion-item>
-    <img src="assets/imgs/header.jpg" />
+    <img src='assets/imgs/header.jpg' />
   </ion-item>
   <ion-list>
     <ion-item>
       <ion-label floating>Usuario</ion-label>
-      <ion-input [(ngModel)]="usuario"></ion-input>
+      <ion-input [(ngModel)]='usuario'></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating color="danger">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
+      <ion-label floating color='danger'>Contraseña</ion-label>
+      <ion-input type='password' [(ngModel)]='password'></ion-input>
     </ion-item>
     <ion-item>
-      <button ion-button block clear text-center color="secondary" (click)="remember()">Olvide mi contraseña</button>
+      <button ion-button block clear text-center color='secondary' (click)='remember()'>Olvide mi contraseña</button>
     </ion-item>
   </ion-list>
 </ion-content>
@@ -26,10 +26,10 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <button ion-button block (click)="login()">Ingresar</button>
+        <button ion-button block (click)='login()'>Ingresar</button>
       </ion-col>
       <ion-col>
-        <button ion-button block color="dark" (click)="register()">Registrarse</button>
+        <button ion-button block color='dark' (click)='register()'>Registrarse</button>
       </ion-col>
     </ion-row>
   </ion-grid>

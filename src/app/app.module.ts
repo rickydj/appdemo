@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { DatosProvider } from '../providers/datos';
-import { MensajesProvider } from "../providers/mensajes"
+import { MensajesProvider } from '../providers/mensajes'
 
 
 @NgModule({

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MensajesProvider } from "../../providers/mensajes"
-import { DatosProvider } from "../../providers/datos"
-import { LoginPage } from "../login/login"
+import { MensajesProvider } from '../../providers/mensajes'
+import { DatosProvider } from '../../providers/datos'
+import { LoginPage } from '../login/login'
 
 /**
  * Generated class for the RegisterPage page.
@@ -17,9 +17,9 @@ import { LoginPage } from "../login/login"
 })
 export class RegisterPage {
 
-  usuario = "";
-  password = "";
-  passconf = "";
+  usuario = '';
+  password = '';
+  passconf = '';
 
   constructor(
     public navCtrl: NavController,
@@ -35,7 +35,7 @@ export class RegisterPage {
 
   register() {
     this.registerUser().then(() => {
-      this.mens.verToast("usuario registrado, puede acceder");
+      this.mens.verToast('usuario registrado, puede acceder');
       this.navCtrl.push(LoginPage);
     }).catch((err) => {
       console.log(err);
@@ -43,8 +43,8 @@ export class RegisterPage {
   }
 
   checkCampos() {
-    if (this.usuario === "" && this.password === "" && this.passconf === "") {
-      this.mens.verAlerta("Campos incompletos", "Es necesario que diligencie todos los campos para registrar el usuario", ["OK"]);
+    if (this.usuario === '' && this.password === '' && this.passconf === '') {
+      this.mens.verAlerta('Campos incompletos', 'Es necesario que diligencie todos los campos para registrar el usuario', ['OK']);
       return false;
     }
     return true;
@@ -53,7 +53,7 @@ export class RegisterPage {
   checkPasswords() {
     if (this.checkCampos()) {
       if (this.password !== this.passconf) {
-        this.mens.verAlerta("Contraseña errada", "La contraseña y su confirmacion no coinciden", ["OK"]);
+        this.mens.verAlerta('Contraseña errada', 'La contraseña y su confirmacion no coinciden', ['OK']);
         return false;
       }
       return true;

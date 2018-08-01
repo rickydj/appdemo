@@ -28,7 +28,7 @@ export class MensajesProvider {
 
   }
 
-  verToast(mensaje, duracion = 3000, posicion = "bottom") {
+  verToast(mensaje, duracion = 3000, posicion = 'bottom') {
     let toast = this.toast.create({
       message: mensaje,
       duration: duracion,

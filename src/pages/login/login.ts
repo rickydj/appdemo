@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { DatosProvider } from "../../providers/datos"
-import { MensajesProvider } from "../../providers/mensajes"
+import { DatosProvider } from '../../providers/datos'
+import { MensajesProvider } from '../../providers/mensajes'
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
 
@@ -18,8 +18,8 @@ import { RegisterPage } from '../register/register';
 })
 export class LoginPage {
 
-  usuario = "";
-  password = "";
+  usuario = '';
+  password = '';
 
   constructor(
     public navCtrl: NavController,
@@ -33,7 +33,7 @@ export class LoginPage {
 
 
   login() {
-    console.log("Login");
+    console.log('Login');
     this.usuarioValido().then(() => {
       this.navCtrl.push(HomePage);
     }).catch((err) => { console.log(err) });
@@ -43,24 +43,24 @@ export class LoginPage {
   }
 
   remember() {
-    let titulo = "Recuperar contraseña";
-    let mensaje = "Escriba el correo que registro al momento de crear su cuenta para enviarle un vinculo para recuparar su contraseña";
+    let titulo = 'Recuperar contraseña';
+    let mensaje = 'Escriba el correo que registro al momento de crear su cuenta para enviarle un vinculo para recuparar su contraseña';
     let campo = 'email'
-    let btnOK = "Recuperar";
+    let btnOK = 'Recuperar';
     let mtdOK = data => {
       console.log(data);
-      this.mens.verAlerta("Enviado", "Se envio un correo con las instrucciones de recuperacion al correo " + data.email, ["OK"]);
+      this.mens.verAlerta('Enviado', 'Se envio un correo con las instrucciones de recuperacion al correo ' + data.email, ['OK']);
     };
-    let btnCancel = "Salir";
+    let btnCancel = 'Salir';
     let mtdCancel = () => {
-      console.log("Cancelado")
+      console.log('Cancelado')
     };
     this.mens.verPrompt(titulo, mensaje, campo, btnOK, mtdOK, btnCancel, mtdCancel);
   }
 
   evalCampos() {
-    if (this.usuario === "" || this.password === "") {
-      this.mens.verAlerta("Informacion vacia", "Es necesario que diligencie usuario y contraseña", ["Listo"]);
+    if (this.usuario === '' || this.password === '') {
+      this.mens.verAlerta('Informacion vacia', 'Es necesario que diligencie usuario y contraseña', ['Listo']);
       return false;
     }
     return true;
@@ -70,11 +70,11 @@ export class LoginPage {
     let prom = new Promise((resolve, reject) => {
       if (this.evalCampos()) {
 
-        console.log("Aqui");
+        console.log('Aqui');
         this.datos.buscarUsuario(this.usuario, this.password).then(() => {
           resolve();
         }).catch((err) => {
-          this.mens.verAlerta("Error", err, ["OK"]);
+          this.mens.verAlerta('Error', err, ['OK']);
           reject();
         });
       }
@@ -82,7 +82,7 @@ export class LoginPage {
         reject();
       }
     });
-    console.log("Pase!");
+    console.log('Pase!');
     return prom;
   }
 
